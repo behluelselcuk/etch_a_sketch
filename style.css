@@ -1,0 +1,14 @@
+.raster {
+    width: 800px;
+    height: 800px;
+    border: 2px solid black;
+    border-radius: 25px;
+    background-color: antiquewhite;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.cell {
+    box-sizing: border-box;
+}
