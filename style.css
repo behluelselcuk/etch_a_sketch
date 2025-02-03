@@ -1,3 +1,9 @@
+.head {
+    display: flex;
+    flex-direction: row;
+    gap: 400px;
+}
+
 .raster {
     width: 800px;
     height: 800px;
@@ -11,4 +17,9 @@
 
 .cell {
     box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.cell:hover {
+    background-color: rgb(158, 133, 104);
 }
