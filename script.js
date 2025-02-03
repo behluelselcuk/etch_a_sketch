@@ -9,8 +9,18 @@ let numberBtn = document.querySelector('#numberBtn');
 for (let i = 0; i < 256; i++) {
     const cell = document.createElement('div');
     cell.classList.add('cell');
+
     cell.style.width = '50px';
     cell.style.height = '50px';
+    cell.dataset.brightness = 100;
+
+    cell.addEventListener('mouseover', () => {
+        let currentBrightness = parseInt(cell.dataset.brightness);
+        currentBrightness = Math.max(currentBrightness -10, 0);
+        cell.dataset.brightness = currentBrightness;
+        cell.style.backgroundColor = `hsl(0, 0%, ${currentBrightness}%)`;
+    })
+
     raster.appendChild(cell);
 }
 
@@ -33,7 +43,13 @@ numberBtn.addEventListener('click', () => {
         newCell.style.height = `${size}px`;
         newCell.dataset.brightness = 100;
 
+        newCell.addEventListener('mouseover', () => {
+            let currentBrightness = parseInt(newCell.dataset.brightness);
+            currentBrightness = Math.max(currentBrightness - 10, 0);
+            newCell.dataset.brightness = currentBrightness;
+            newCell.style.backgroundColor = `hsl(0, 0%, ${currentBrightness}%)`;
+        });
+
         raster.appendChild(newCell);
     }
 })
-
